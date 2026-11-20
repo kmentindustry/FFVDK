@@ -13,16 +13,16 @@
 <body>
 
     <header class="hero">
-        <canvas id="header-canvas"></canvas>
+        <canvas id="header-canvas" aria-hidden="true"></canvas>
         <div class="header-content">
             <p class="eyebrow">Amsterdam, NL &bull; Sint Maarten</p>
             <h1 class="shimmer-text">Fernando F. van der Kraats</h1>
             <h2 class="subtitle">Guest Experience &amp; Event Producer &bull; Performer, Dancer &amp; Musician</h2>
 
             <div class="cta-group">
-                <!-- Commit your exported Canva PDF as 'Fernando-van-der-Kraats-CV.pdf' in the repo root -->
-                <a href="Fernando-van-der-Kraats-CV.pdf" download class="btn-gold">Download CV (PDF)</a>
-                <a href="https://www.canva.com/d/ZB6OXIXt_QIxFcS" target="_blank" rel="noopener noreferrer" class="btn-outline">View Live CV on Canva</a>
+                <a href="https://www.canva.com/d/ZB6OXIXt_QIxFcS" target="_blank" rel="noopener noreferrer" class="btn-gold">View / Download CV</a>
+                <a href="#professional" class="btn-outline">Professional CV</a>
+                <a href="#artist" class="btn-outline">Artist Credentials</a>
                 <a href="https://linktr.ee/iamnandov" target="_blank" rel="noopener noreferrer" class="btn-outline">Connect</a>
             </div>
         </div>
@@ -30,9 +30,9 @@
 
     <nav class="profile-nav" aria-label="Profile Sections">
         <div class="nav-inner">
-            <button class="tab-btn active" data-target="all">All Credentials</button>
-            <button class="tab-btn" data-target="professional">Professional CV</button>
-            <button class="tab-btn" data-target="artist">Artist Credentials</button>
+            <button type="button" class="tab-btn active" data-target="all">All Credentials</button>
+            <button type="button" class="tab-btn" data-target="professional">Professional CV</button>
+            <button type="button" class="tab-btn" data-target="artist">Artist Credentials</button>
             <a href="#contact" class="nav-link">Contact</a>
         </div>
     </nav>
@@ -225,7 +225,7 @@
                     </p>
                 </div>
 
-                <div class="skill-group" style="margin-top: 1.5rem;">
+                <div class="skill-group disciplines-group">
                     <h4>Movement &amp; Performance Disciplines</h4>
                     <div class="tags">
                         <span>Contemporary</span>
@@ -241,7 +241,7 @@
             </article>
         </section>
 
-        <!-- CONTACT & DIRECT DOWNLOAD -->
+        <!-- CONTACT & CV ACCESS -->
         <section id="contact" class="card contact-card visible">
             <h3>Get in Touch</h3>
             <p>Available for hospitality &amp; guest experience roles, event production, council/community initiatives, and artistic bookings.</p>
@@ -259,9 +259,9 @@
                     <a href="https://linktr.ee/iamnandov" target="_blank" rel="noopener noreferrer">linktr.ee/iamnandov</a>
                 </div>
             </div>
-            <div class="cta-group" style="margin-top: 1.8rem;">
-                <a href="Fernando-van-der-Kraats-CV.pdf" download class="btn-gold">Download CV (PDF)</a>
-                <a href="https://www.canva.com/d/ZB6OXIXt_QIxFcS" target="_blank" rel="noopener noreferrer" class="btn-outline">Open in Canva</a>
+            <div class="cta-group contact-cta">
+                <a href="https://www.canva.com/d/ZB6OXIXt_QIxFcS" target="_blank" rel="noopener noreferrer" class="btn-gold">View / Download CV on Canva</a>
+                <a href="https://linktr.ee/iamnandov" target="_blank" rel="noopener noreferrer" class="btn-outline">More Links</a>
             </div>
         </section>
 
@@ -272,31 +272,45 @@
     </footer>
 
     <script>
-        // Tab filtering + URL hash support (#professional or #artist)
         const tabButtons = document.querySelectorAll('.tab-btn');
         const sections = document.querySelectorAll('.profile-section');
 
-        function setFilter(filter) {
+        function setFilter(filter, shouldScroll = false) {
             tabButtons.forEach(btn => {
                 btn.classList.toggle('active', btn.dataset.target === filter);
             });
+
             sections.forEach(sec => {
-                if (filter === 'all' || sec.dataset.category === filter) {
-                    sec.style.display = 'block';
-                } else {
-                    sec.style.display = 'none';
-                }
+                sec.style.display = (filter === 'all' || sec.dataset.category === filter) ? 'block' : 'none';
             });
+
+            if (shouldScroll && filter !== 'all') {
+                const targetEl = document.getElementById(filter);
+                if (targetEl) {
+                    targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }
         }
 
         tabButtons.forEach(btn => {
             btn.addEventListener('click', () => {
                 const target = btn.dataset.target;
-                setFilter(target);
+                setFilter(target, false);
                 if (target !== 'all') {
                     history.replaceState(null, '', '#' + target);
                 } else {
-                    history.replaceState(null, '', window.location.pathname);
+                    history.replaceState(null, '', window.location.pathname + window.location.search);
+                }
+            });
+        });
+
+        document.querySelectorAll('.hero .btn-outline[href^="#"]').forEach(link => {
+            link.addEventListener('click', (e) => {
+                const target = link.getAttribute('href').replace('#', '');
+                if (target === 'professional' || target === 'artist') {
+                    e.preventDefault();
+                    setFilter(target, true);
+                    history.replaceState(null, '', '#' + target);
                 }
             });
         });
@@ -304,48 +318,57 @@
         window.addEventListener('DOMContentLoaded', () => {
             const hash = window.location.hash.replace('#', '');
             if (hash === 'professional' || hash === 'artist') {
-                setFilter(hash);
+                setFilter(hash, false);
             }
         });
 
-        // Subtle gold particle canvas in hero header
+        // Gold particle canvas
         const canvas = document.getElementById('header-canvas');
-        const ctx = canvas.getContext('2d');
-        let particles = [];
+        const ctx = canvas ? canvas.getContext('2d') : null;
 
-        function resizeCanvas() {
-            canvas.width = canvas.offsetWidth;
-            canvas.height = canvas.offsetHeight;
-        }
-        window.addEventListener('resize', resizeCanvas);
-        resizeCanvas();
+        if (canvas && ctx) {
+            let particles = [];
 
-        for (let i = 0; i < 38; i++) {
-            particles.push({
-                x: Math.random() * canvas.width,
-                y: Math.random() * canvas.height,
-                r: Math.random() * 1.8 + 0.5,
-                dx: (Math.random() - 0.5) * 0.3,
-                dy: (Math.random() - 0.5) * 0.3,
-                alpha: Math.random() * 0.5 + 0.15
-            });
-        }
+            function initParticles() {
+                particles = [];
+                for (let i = 0; i < 38; i++) {
+                    particles.push({
+                        x: Math.random() * canvas.width,
+                        y: Math.random() * canvas.height,
+                        r: Math.random() * 1.8 + 0.5,
+                        dx: (Math.random() - 0.5) * 0.3,
+                        dy: (Math.random() - 0.5) * 0.3,
+                        alpha: Math.random() * 0.5 + 0.15
+                    });
+                }
+            }
 
-        function animateParticles() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            particles.forEach(p => {
-                p.x += p.dx;
-                p.y += p.dy;
-                if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
-                if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
-                ctx.beginPath();
-                ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-                ctx.fillStyle = `rgba(212, 175, 55, ${p.alpha})`;
-                ctx.fill();
-            });
-            requestAnimationFrame(animateParticles);
+            function resizeCanvas() {
+                canvas.width = canvas.offsetWidth;
+                canvas.height = canvas.offsetHeight;
+                initParticles();
+            }
+
+            window.addEventListener('resize', resizeCanvas);
+            resizeCanvas();
+
+            function animateParticles() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                particles.forEach(p => {
+                    p.x += p.dx;
+                    p.y += p.dy;
+                    if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+                    if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(212, 175, 55, ${p.alpha})`;
+                    ctx.fill();
+                });
+                requestAnimationFrame(animateParticles);
+            }
+
+            animateParticles();
         }
-        animateParticles();
     </script>
 </body>
 </html>
