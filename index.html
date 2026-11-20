@@ -1,841 +1,1020 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fernando F. van der Kraats | Online Presence, CV &amp; Artist Portfolio</title>
-    <meta name="description" content="Fernando F. van der Kraats — Online footprint, CV, guest experience, event production, performing arts &amp; music in Amsterdam &amp; Sint Maarten.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg-dark: #08080a;
-            --bg-card: #121215;
-            --bg-elevated: #18181d;
-            --gold-primary: #d4af37;
-            --gold-light: #fef1c9;
-            --gold-gradient: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
-            --gold-shadow: rgba(212, 175, 55, 0.35);
-            --text-primary: #e6e6e8;
-            --text-muted: #9a9aa1;
-            --font-heading: 'Cinzel', serif;
-            --font-body: 'Montserrat', sans-serif;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fernando F. van der Kraats | Online Highlights, CV &amp; Artist Credentials</title>
+  <meta
+    name="description"
+    content="Public online highlights, Professional CV, and Artist Credentials for Fernando F. van der Kraats (Fernando van der Kraats) across Amsterdam and Sint Maarten."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css?family=Cinzel:wght@500;700&family=Montserrat:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    :root {
+      --bg-dark: #08080a;
+      --bg-card: #121215;
+      --bg-elevated: #18181d;
+      --gold-primary: #d4af37;
+      --gold-light: #fef1c9;
+      --gold-gradient: linear-gradient(
+        135deg,
+        #bf953f 0%,
+        #fcf6ba 25%,
+        #b38728 50%,
+        #fbf5b7 75%,
+        #aa771c 100%
+      );
+      --gold-shadow: rgba(212, 175, 55, 0.35);
+      --text-primary: #e6e6e8;
+      --text-muted: #9a9aa1;
+      --font-heading: 'Cinzel', serif;
+      --font-body: 'Montserrat', sans-serif;
+    }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        html {
-            scroll-behavior: smooth;
-        }
+    html {
+      scroll-behavior: smooth;
+    }
 
-        body {
-            background-color: var(--bg-dark);
-            color: var(--text-primary);
-            font-family: var(--font-body);
-            line-height: 1.75;
-        }
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      line-height: 1.75;
+    }
 
-        a:focus-visible,
-        button:focus-visible {
-            outline: 2px solid var(--gold-primary);
-            outline-offset: 2px;
-        }
+    a:focus-visible,
+    button:focus-visible {
+      outline: 2px solid var(--gold-primary);
+      outline-offset: 2px;
+    }
 
-        .hero {
-            position: relative;
-            overflow: hidden;
-            padding: 5.5rem 1.5rem 4rem 1.5rem;
-            text-align: center;
-            background: radial-gradient(circle at center, rgba(35, 29, 12, 0.85) 0%, var(--bg-dark) 100%);
-            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
-        }
+    /* Hero Section */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 5.5rem 1.5rem 4rem 1.5rem;
+      text-align: center;
+      background: radial-gradient(circle at center, rgba(35, 29, 12, 0.85) 0%, var(--bg-dark) 100%);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+    }
 
-        #header-canvas {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-            pointer-events: none;
-        }
+    #header-canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      pointer-events: none;
+    }
 
-        .header-content {
-            position: relative;
-            z-index: 2;
-            max-width: 880px;
-            margin: 0 auto;
-        }
+    .header-content {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+      margin: 0 auto;
+    }
 
-        .eyebrow {
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            color: var(--text-muted);
-            margin-bottom: 0.75rem;
-        }
+    .eyebrow {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--text-muted);
+      margin-bottom: 0.75rem;
+    }
 
-        h1.shimmer-text {
-            font-family: var(--font-heading);
-            font-size: 3rem;
-            background: var(--gold-gradient);
-            background-size: 200% auto;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: shimmer 6s linear infinite;
-            margin-bottom: 0.6rem;
-        }
+    h1.shimmer-text {
+      font-family: var(--font-heading);
+      font-size: 3rem;
+      background: var(--gold-gradient);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shimmer 6s linear infinite;
+      margin-bottom: 0.6rem;
+    }
 
-        @keyframes shimmer {
-            0% { background-position: 0% center; }
-            100% { background-position: 200% center; }
-        }
+    @keyframes shimmer {
+      0% {
+        background-position: 0% center;
+      }
+      100% {
+        background-position: 200% center;
+      }
+    }
 
-        h2.subtitle {
-            font-family: var(--font-heading);
-            font-size: 1.1rem;
-            color: var(--gold-light);
-            text-transform: uppercase;
-            letter-spacing: 2.5px;
-            margin-bottom: 2.2rem;
-            font-weight: 500;
-        }
+    h2.subtitle {
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      color: var(--gold-light);
+      text-transform: uppercase;
+      letter-spacing: 2.2px;
+      margin-bottom: 2.2rem;
+      font-weight: 500;
+    }
 
-        .cta-group {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 0.85rem;
-        }
+    .cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.85rem;
+    }
 
-        .btn-gold {
-            display: inline-block;
-            padding: 0.85rem 2.1rem;
-            background: var(--gold-gradient);
-            background-size: 200% auto;
-            color: #08080a;
-            font-weight: 600;
-            font-size: 0.85rem;
-            text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 1.8px;
-            border-radius: 30px;
-            box-shadow: 0 4px 20px var(--gold-shadow);
-            transition: all 0.35s ease;
-        }
+    .btn-gold {
+      display: inline-block;
+      padding: 0.85rem 2.1rem;
+      background: var(--gold-gradient);
+      background-size: 200% auto;
+      color: #08080a;
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 1.8px;
+      border-radius: 30px;
+      box-shadow: 0 4px 20px var(--gold-shadow);
+      transition: all 0.35s ease;
+    }
 
-        .btn-gold:hover {
-            background-position: right center;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 28px rgba(212, 175, 55, 0.55);
-        }
+    .btn-gold:hover {
+      background-position: right center;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(212, 175, 55, 0.55);
+    }
 
-        .btn-outline {
-            display: inline-block;
-            padding: 0.85rem 1.8rem;
-            border: 1px solid rgba(212, 175, 55, 0.55);
-            color: var(--gold-light);
-            font-weight: 500;
-            font-size: 0.85rem;
-            text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            border-radius: 30px;
-            background: rgba(18, 18, 21, 0.7);
-            transition: all 0.35s ease;
-        }
+    .btn-outline {
+      display: inline-block;
+      padding: 0.85rem 1.75rem;
+      border: 1px solid rgba(212, 175, 55, 0.55);
+      color: var(--gold-light);
+      font-weight: 500;
+      font-size: 0.82rem;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 1.4px;
+      border-radius: 30px;
+      background: rgba(18, 18, 21, 0.7);
+      transition: all 0.35s ease;
+    }
 
-        .btn-outline:hover {
-            border-color: var(--gold-primary);
-            background: rgba(212, 175, 55, 0.12);
-            transform: translateY(-2px);
-        }
+    .btn-outline:hover {
+      border-color: var(--gold-primary);
+      background: rgba(212, 175, 55, 0.12);
+      transform: translateY(-2px);
+    }
 
-        .profile-nav {
-            position: sticky;
-            top: 0;
-            z-index: 20;
-            background: rgba(8, 8, 10, 0.92);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-            padding: 0.85rem 1rem;
-        }
+    /* Sticky Profile Switcher Bar */
+    .profile-nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(8, 8, 10, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+      padding: 0.85rem 1rem;
+    }
 
-        .nav-inner {
-            max-width: 880px;
-            margin: 0 auto;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            gap: 0.65rem;
-        }
+    .nav-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 0.65rem;
+    }
 
-        .tab-btn,
-        .nav-link {
-            background: transparent;
-            border: 1px solid rgba(212, 175, 55, 0.25);
-            color: var(--text-primary);
-            font-family: var(--font-body);
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 1.4px;
-            padding: 0.5rem 1.15rem;
-            border-radius: 20px;
-            cursor: pointer;
-            text-decoration: none;
-            transition: all 0.25s ease;
-        }
+    .tab-btn,
+    .nav-link {
+      background: transparent;
+      border: 1px solid rgba(212, 175, 55, 0.25);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1.4px;
+      padding: 0.5rem 1.15rem;
+      border-radius: 20px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.25s ease;
+    }
 
-        .tab-btn:hover,
-        .nav-link:hover {
-            border-color: var(--gold-primary);
-            color: var(--gold-light);
-        }
+    .tab-btn:hover,
+    .nav-link:hover {
+      border-color: var(--gold-primary);
+      color: var(--gold-light);
+    }
 
-        .tab-btn.active {
-            background: var(--gold-primary);
-            color: #08080a;
-            border-color: var(--gold-primary);
-            font-weight: 600;
-        }
+    .tab-btn.active {
+      background: var(--gold-primary);
+      color: #08080a;
+      border-color: var(--gold-primary);
+      font-weight: 600;
+    }
 
-        .container {
-            max-width: 880px;
-            margin: 2.5rem auto 4rem auto;
-            padding: 0 1.5rem;
-        }
+    /* Main Container & Section Headers */
+    .container {
+      max-width: 900px;
+      margin: 2.5rem auto 4rem auto;
+      padding: 0 1.5rem;
+    }
 
-        .profile-section {
-            margin-bottom: 3.5rem;
-            scroll-margin-top: 4.5rem;
-        }
+    .profile-section {
+      margin-bottom: 3.5rem;
+      scroll-margin-top: 4.5rem;
+    }
 
-        .section-header {
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.35);
-        }
+    .section-header {
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.35);
+    }
 
-        .section-tag {
-            display: block;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 2.5px;
-            color: var(--gold-primary);
-            margin-bottom: 0.2rem;
-        }
+    .section-tag {
+      display: block;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 2.5px;
+      color: var(--gold-primary);
+      margin-bottom: 0.2rem;
+    }
 
-        .section-header h2 {
-            font-family: var(--font-heading);
-            font-size: 1.9rem;
-            color: var(--gold-light);
-        }
+    .section-header h2 {
+      font-family: var(--font-heading);
+      font-size: 1.9rem;
+      color: var(--gold-light);
+    }
 
-        .card {
-            background: var(--bg-card);
-            border: 1px solid rgba(212, 175, 55, 0.16);
-            border-left: 3px solid var(--gold-primary);
-            border-radius: 8px;
-            padding: 2rem;
-            margin-bottom: 1.75rem;
-            transition: border-color 0.3s ease, box-shadow 0.3s ease;
-        }
+    /* Cards */
+    .card {
+      background: var(--bg-card);
+      border: 1px solid rgba(212, 175, 55, 0.16);
+      border-left: 3px solid var(--gold-primary);
+      border-radius: 8px;
+      padding: 2rem;
+      margin-bottom: 1.75rem;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
 
-        .card:hover {
-            border-color: var(--gold-primary);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
-        }
+    .card:hover {
+      border-color: var(--gold-primary);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+    }
 
-        h3 {
-            font-family: var(--font-heading);
-            font-size: 1.35rem;
-            color: var(--gold-primary);
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-            padding-bottom: 0.5rem;
-            margin-bottom: 1.25rem;
-        }
+    h3 {
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      color: var(--gold-primary);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.25rem;
+    }
 
-        p {
-            margin-bottom: 1rem;
-        }
+    p {
+      margin-bottom: 1rem;
+    }
 
-        p:last-child {
-            margin-bottom: 0;
-        }
+    p:last-child {
+      margin-bottom: 0;
+    }
 
-        strong { color: var(--gold-light); }
-        em { color: var(--gold-primary); }
+    strong {
+      color: var(--gold-light);
+    }
 
-        .intro-card .lead {
-            font-size: 1.12rem;
-            color: #ffffff;
-        }
+    em {
+      color: var(--gold-primary);
+    }
 
-        .highlights-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 1.25rem;
-            margin-top: 1.25rem;
-        }
+    .intro-card .lead {
+      font-size: 1.1rem;
+      color: #ffffff;
+    }
 
-        .highlight-box {
-            background: var(--bg-elevated);
-            border: 1px solid rgba(212, 175, 55, 0.22);
-            border-radius: 6px;
-            padding: 1.25rem;
-        }
+    .highlights-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.25rem;
+      margin-top: 1.25rem;
+    }
 
-        .highlight-box h4 {
-            font-size: 0.98rem;
-            color: var(--gold-light);
-            margin-bottom: 0.45rem;
-        }
+    .highlight-box {
+      background: var(--bg-elevated);
+      border: 1px solid rgba(212, 175, 55, 0.22);
+      border-radius: 6px;
+      padding: 1.25rem;
+    }
 
-        .highlight-box p {
-            font-size: 0.9rem;
-            color: var(--text-primary);
-        }
+    .highlight-box h4 {
+      font-size: 0.98rem;
+      color: var(--gold-light);
+      margin-bottom: 0.45rem;
+    }
 
-        .entry {
-            padding-bottom: 1.5rem;
-            margin-bottom: 1.5rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-        }
+    .highlight-box p {
+      font-size: 0.9rem;
+      color: var(--text-primary);
+    }
 
-        .entry:last-child {
-            padding-bottom: 0;
-            margin-bottom: 0;
-            border-bottom: none;
-        }
+    .pub-list {
+      padding-left: 1.2rem;
+    }
 
-        .entry-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            gap: 1rem;
-            margin-bottom: 0.65rem;
-        }
+    .pub-list li {
+      margin-bottom: 0.7rem;
+    }
 
-        .entry h4 {
-            font-size: 1.08rem;
-            color: #ffffff;
-            font-weight: 600;
-        }
+    .pub-list a {
+      color: var(--gold-light);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.35);
+    }
 
-        .entry .org {
-            font-size: 0.9rem;
-            color: var(--gold-primary);
-            margin-bottom: 0;
-        }
+    .pub-list a:hover {
+      color: var(--gold-primary);
+      border-bottom-color: var(--gold-primary);
+    }
 
-        .entry .date {
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--text-muted);
-            white-space: nowrap;
-            background: var(--bg-elevated);
-            padding: 0.25rem 0.7rem;
-            border-radius: 4px;
-            border: 1px solid rgba(212, 175, 55, 0.2);
-        }
+    /* Experience & Credit Entries */
+    .entry {
+      padding-bottom: 1.5rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    }
 
-        .entry ul {
-            padding-left: 1.2rem;
-            color: var(--text-primary);
-        }
+    .entry:last-child {
+      padding-bottom: 0;
+      margin-bottom: 0;
+      border-bottom: none;
+    }
 
-        .entry li {
-            margin-bottom: 0.45rem;
-        }
+    .entry-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 0.65rem;
+    }
 
-        .entry li:last-child {
-            margin-bottom: 0;
-        }
+    .entry h4 {
+      font-size: 1.08rem;
+      color: #ffffff;
+      font-weight: 600;
+    }
 
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 1.5rem;
-        }
+    .entry .org {
+      font-size: 0.9rem;
+      color: var(--gold-primary);
+      margin-bottom: 0;
+    }
 
-        .disciplines-group {
-            margin-top: 1.5rem;
-            padding-top: 1.25rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.07);
-        }
+    .entry .date {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+      white-space: nowrap;
+      background: var(--bg-elevated);
+      padding: 0.25rem 0.7rem;
+      border-radius: 4px;
+      border: 1px solid rgba(212, 175, 55, 0.2);
+    }
 
-        .skill-group h4 {
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: var(--text-muted);
-            margin-bottom: 0.75rem;
-        }
+    .entry ul {
+      padding-left: 1.2rem;
+      color: var(--text-primary);
+    }
 
-        .tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.55rem;
-        }
+    .entry li {
+      margin-bottom: 0.45rem;
+    }
 
-        .tags span {
-            font-size: 0.82rem;
-            background: var(--bg-elevated);
-            color: var(--gold-light);
-            border: 1px solid rgba(212, 175, 55, 0.28);
-            padding: 0.35rem 0.85rem;
-            border-radius: 20px;
-        }
+    .entry li:last-child {
+      margin-bottom: 0;
+    }
 
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-            gap: 1.2rem;
-            margin-top: 1.25rem;
-        }
+    /* Skill & Discipline Tags */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
 
-        .contact-grid .label {
-            display: block;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: var(--text-muted);
-            margin-bottom: 0.2rem;
-        }
+    .disciplines-group {
+      margin-top: 1.5rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.07);
+    }
 
-        .contact-grid a {
-            color: var(--gold-light);
-            text-decoration: none;
-            font-weight: 500;
-        }
+    .skill-group h4 {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--text-muted);
+      margin-bottom: 0.75rem;
+    }
 
-        .contact-grid a:hover {
-            color: var(--gold-primary);
-            text-decoration: underline;
-        }
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+    }
 
-        .contact-cta {
-            margin-top: 1.8rem;
-            justify-content: flex-start;
-        }
+    .tags span {
+      font-size: 0.82rem;
+      background: var(--bg-elevated);
+      color: var(--gold-light);
+      border: 1px solid rgba(212, 175, 55, 0.28);
+      padding: 0.35rem 0.85rem;
+      border-radius: 20px;
+    }
 
-        footer {
-            text-align: center;
-            padding: 2.5rem 1.5rem;
-            color: var(--text-muted);
-            font-size: 0.82rem;
-            border-top: 1px solid rgba(212, 175, 55, 0.15);
-        }
+    /* Contact Grid */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 1.2rem;
+      margin-top: 1.25rem;
+    }
 
-        @media (max-width: 768px) {
-            h1.shimmer-text { font-size: 2.1rem; }
-            h2.subtitle { font-size: 0.92rem; letter-spacing: 1.5px; }
-            .entry-top { flex-direction: column; gap: 0.35rem; }
-            .card { padding: 1.5rem; }
-            .contact-cta { justify-content: center; }
-        }
-    </style>
+    .contact-grid .label {
+      display: block;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--text-muted);
+      margin-bottom: 0.2rem;
+    }
+
+    .contact-grid a {
+      color: var(--gold-light);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .contact-grid a:hover {
+      color: var(--gold-primary);
+      text-decoration: underline;
+    }
+
+    .contact-cta {
+      margin-top: 1.8rem;
+      justify-content: flex-start;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2.5rem 1.5rem;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      border-top: 1px solid rgba(212, 175, 55, 0.15);
+    }
+
+    @media (max-width: 768px) {
+      h1.shimmer-text {
+        font-size: 2.1rem;
+      }
+      h2.subtitle {
+        font-size: 0.92rem;
+        letter-spacing: 1.5px;
+      }
+      .entry-top {
+        flex-direction: column;
+        gap: 0.35rem;
+      }
+      .card {
+        padding: 1.5rem;
+      }
+      .contact-cta {
+        justify-content: center;
+      }
+    }
+  </style>
 </head>
 <body>
+  <header class="hero">
+    <canvas id="header-canvas" aria-hidden="true"></canvas>
+    <div class="header-content">
+      <p class="eyebrow">Amsterdam, NL &bull; Sint Maarten</p>
+      <h1 class="shimmer-text">Fernando F. van der Kraats</h1>
+      <h2 class="subtitle">
+        Guest Experience &amp; Event Producer &bull; Performer, Dancer &amp; Musician
+      </h2>
+      <div class="cta-group">
+        <a
+          href="https://www.canva.com/d/ZB60XIXt_QIxFcS"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-gold"
+          >View / Download CV</a
+        >
+        <a href="#online" class="btn-outline">Online Highlights</a>
+        <a href="#professional" class="btn-outline">Professional CV</a>
+        <a href="#artist" class="btn-outline">Artist Credentials</a>
+        <a
+          href="https://linktr.ee/iamnandov"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-outline"
+          >Linktree</a
+        >
+      </div>
+    </div>
+  </header>
 
-    <header class="hero">
-        <canvas id="header-canvas" aria-hidden="true"></canvas>
-        <div class="header-content">
-            <p class="eyebrow">Amsterdam, NL &bull; Sint Maarten</p>
-            <h1 class="shimmer-text">Fernando F. van der Kraats</h1>
-            <h2 class="subtitle">Guest Experience &amp; Event Producer &bull; Performer, Dancer &amp; Musician</h2>
+  <nav class="profile-nav" aria-label="Profile Sections">
+    <div class="nav-inner">
+      <button type="button" class="tab-btn active" data-target="all">All Sections</button>
+      <button type="button" class="tab-btn" data-target="online">Online Highlights</button>
+      <button type="button" class="tab-btn" data-target="professional">Professional CV</button>
+      <button type="button" class="tab-btn" data-target="artist">Artist Credentials</button>
+      <a href="#contact" class="nav-link">Contact</a>
+    </div>
+  </nav>
 
-            <div class="cta-group">
-                <a href="https://www.canva.com/d/ZB6OXIXt_QIxFcS" target="_blank" rel="noopener noreferrer" class="btn-gold">View / Download CV</a>
-                <a href="#online" class="btn-outline">Online Footprint</a>
-                <a href="#professional" class="btn-outline">Professional CV</a>
-                <a href="#artist" class="btn-outline">Artist Credentials</a>
-                <a href="https://linktr.ee/iamnandov" target="_blank" rel="noopener noreferrer" class="btn-outline">Connect</a>
-            </div>
+  <main class="container">
+    <!-- 1. ONLINE HIGHLIGHTS (FIRST) -->
+    <section id="online" class="profile-section" data-category="online">
+      <div class="section-header">
+        <span class="section-tag">Public Footprint &amp; Press</span>
+        <h2>Online Highlights</h2>
+      </div>
+
+      <article class="card intro-card">
+        <h3>Public Presence Across Stage, Hospitality &amp; Community</h3>
+        <p class="lead">
+          Publicly indexed coverage and projects under <strong>Fernando van der Kraats</strong> /
+          <strong>Fernando F. van der Kraats</strong> span theatre and live music in the
+          Netherlands, dance training and gala performances in Sint Maarten, and independent
+          community and event initiatives in Amsterdam.
+        </p>
+
+        <div class="highlights-grid">
+          <div class="highlight-box">
+            <h4>Theatre &amp; Festival Credits</h4>
+            <p>
+              Featured in <em>UMA</em> (Untold &amp; Black Harmony) at the
+              <strong>Black Heritage Festival</strong> in Amsterdam.
+            </p>
+          </div>
+          <div class="highlight-box">
+            <h4>Live Touring &amp; Press</h4>
+            <p>
+              Named in <em>Winq</em> alongside singer-songwriter <strong>Jason Gwen</strong> as a
+              touring band member for the <em>SEX</em> album cycle.
+            </p>
+          </div>
+          <div class="highlight-box">
+            <h4>Amsterdam &amp; Sint Maarten Roots</h4>
+            <p>
+              Documented in Sint Maarten arts and gala coverage (NIA / 5 O&rsquo;Clock / USC
+              Christmas Gala) alongside Amsterdam community &amp; event work.
+            </p>
+          </div>
         </div>
-    </header>
+      </article>
 
-    <nav class="profile-nav" aria-label="Profile Sections">
-        <div class="nav-inner">
-            <button type="button" class="tab-btn active" data-target="all">All Sections</button>
-            <button type="button" class="tab-btn" data-target="online">Online Presence</button>
-            <button type="button" class="tab-btn" data-target="professional">Professional CV</button>
-            <button type="button" class="tab-btn" data-target="artist">Artist Credentials</button>
-            <a href="#contact" class="nav-link">Contact</a>
+      <article class="card">
+        <h3>Indexed Public Mentions &amp; Profiles</h3>
+        <ul class="pub-list">
+          <li>
+            <strong>Black Heritage Festival &amp; <em>UMA</em> (Untold):</strong> Listed among
+            performers/collaborators for <em>UMA</em> at Untold&rsquo;s Black Heritage Festival
+            programming —
+            <a
+              href="https://untold.nl/en/agenda/2024/openingsavond-black-heritage-festival-2024"
+              target="_blank"
+              rel="noopener noreferrer"
+              >untold.nl</a
+            >
+          </li>
+          <li>
+            <strong><em>Winq</em> Feature on Jason Gwen (April 2025):</strong> Referenced as a
+            touring band member alongside Jason Gwen around his third album <em>SEX</em> —
+            <a
+              href="https://www.winq.nl/muzikant-jason-gwen-over-zijn-derde-album-sex-mensen-zullen-zichzelf-herkennen-in-deze-nummers/294419"
+              target="_blank"
+              rel="noopener noreferrer"
+              >winq.nl</a
+            >
+          </li>
+          <li>
+            <strong>USC Christmas Gala, St. Maarten (December 2017):</strong> Covered for dance
+            performances with Clifford Henry —
+            <a
+              href="https://www.thedailyherald.sx/islands/st-maarteners-share-holiday-spirit-at-usc-christmas-gala"
+              target="_blank"
+              rel="noopener noreferrer"
+              >thedailyherald.sx</a
+            >
+          </li>
+          <li>
+            <strong>NIA &amp; AHK 5 O&rsquo;Clock Program Coverage (2016):</strong> Featured in Sint
+            Maarten dance news and AHK 5 O&rsquo;Clock class showcases —
+            <a
+              href="https://smn-news.com/st-maarten-st-martin-news/24370-national-institute-of-arts-to-travel-to-the-netherlands-with-3-dance-students.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              >smn-news.com</a
+            >
+          </li>
+          <li>
+            <strong>Canva CV &amp; Linktree Hub:</strong> Live resume and social/project links —
+            <a
+              href="https://www.canva.com/d/ZB60XIXt_QIxFcS"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Canva CV</a
+            >
+            &bull;
+            <a
+              href="https://linktr.ee/iamnandov"
+              target="_blank"
+              rel="noopener noreferrer"
+              >linktr.ee/iamnandov</a
+            >
+          </li>
+        </ul>
+      </article>
+    </section>
+
+    <!-- 2. PROFESSIONAL CV -->
+    <section id="professional" class="profile-section" data-category="professional">
+      <div class="section-header">
+        <span class="section-tag">Career &amp; Operations</span>
+        <h2>Professional CV</h2>
+      </div>
+
+      <article class="card intro-card">
+        <h3>Executive Summary</h3>
+        <p class="lead">
+          Versatile hospitality, event production, and community-oriented creative professional with
+          experience across high-volume attraction operations, independent entertainment, and
+          stakeholder representation.
+        </p>
+        <p>
+          Known for rapid operational mastery, calm guest support, and clear coordination, while
+          actively expanding technical skills in C programming (Codam) and WordPress website building.
+        </p>
+      </article>
+
+      <article class="card">
+        <h3>Work Experience</h3>
+
+        <div class="entry">
+          <div class="entry-top">
+            <div>
+              <h4>Experience Champion &amp; Entertainment Host</h4>
+              <p class="org">Madame Tussauds Amsterdam (Dam 20)</p>
+            </div>
+            <span class="date">2025 &ndash; Present</span>
+          </div>
+          <ul>
+            <li>Completed probation ahead of schedule and mastered multiple attraction zones.</li>
+            <li>
+              Recognized as <strong>Experience Champion</strong>, supporting strong guest
+              engagement and satisfaction feedback.
+            </li>
+            <li>
+              Manage crowd flow, uphold safety and hospitality standards, and support cross-team
+              floor operations in a high-volume international setting.
+            </li>
+          </ul>
         </div>
-    </nav>
 
-    <main class="container">
-
-        <!-- SECTION 1: ONLINE FOOTPRINT & PUBLIC PROFESSIONAL OVERVIEW (FIRST IMPRESSION) -->
-        <section id="online" class="profile-section" data-category="online">
-            <div class="section-header">
-                <span class="section-tag">Public Profile &amp; Highlights</span>
-                <h2>What You&rsquo;ll Find Online Professionally</h2>
+        <div class="entry">
+          <div class="entry-top">
+            <div>
+              <h4>Director &amp; Entertainment Producer</h4>
+              <p class="org">Kraats &amp; Matthew Entertainment (Kmentindustry)</p>
             </div>
+            <span class="date">2022 &ndash; Present</span>
+          </div>
+          <ul>
+            <li>
+              Direct an independent entertainment and event production venture supporting artists,
+              live activations, and community initiatives.
+            </li>
+            <li>
+              Lead <strong>GroovePark</strong> in Amsterdam, a free community movement program focused
+              on accessible participation and skill-building.
+            </li>
+            <li>
+              Coordinate event logistics, promotional partnerships, and artist/entourage
+              activations.
+            </li>
+          </ul>
+        </div>
+      </article>
 
-            <article class="card intro-card visible">
-                <h3>Public Professional Snapshot</h3>
-                <p class="lead">
-                    Across hospitality, community programming, event production, and performing arts, Fernando F. van der Kraats is known for high-energy guest engagement, structured coordination, and bridging creative culture with practical execution.
-                </p>
-                <p>
-                    Below is a curated overview of his public professional footprint before moving into his formal <strong>CV</strong> and dedicated <strong>Artist Credentials</strong>.
-                </p>
-
-                <div class="highlights-grid">
-                    <div class="highlight-box">
-                        <h4>High-Volume Guest Experience</h4>
-                        <p>Recognized as an <strong>Experience Champion</strong> at Madame Tussauds Amsterdam, driving guest satisfaction, crowd flow, and cross-department floor support.</p>
-                    </div>
-                    <div class="highlight-box">
-                        <h4>Kmentindustry &amp; GroovePark</h4>
-                        <p>Founder and director behind <strong>Kmentindustry</strong> and <strong>GroovePark</strong>, bringing together live event promotion, artist/entourage coordination, and free community movement.</p>
-                    </div>
-                    <div class="highlight-box">
-                        <h4>Stage, Music &amp; Cultural Roots</h4>
-                        <p>Associated with Amsterdam and Sint Maarten arts circles—from AHK dance training and <em>UMA</em> (Untold &amp; Black Harmony) to live touring with singer-songwriter Jason Gwen[cite: 1].</p>
-                    </div>
-                </div>
-            </article>
-        </section>
-
-        <!-- SECTION 2: PROFESSIONAL / CAREER CV -->
-        <section id="professional" class="profile-section" data-category="professional">
-            <div class="section-header">
-                <span class="section-tag">Career &amp; Operations</span>
-                <h2>Professional CV</h2>
+      <article class="card">
+        <h3>Civic &amp; Advisory Representation</h3>
+        <div class="entry">
+          <div class="entry-top">
+            <div>
+              <h4>Council Representative</h4>
+              <p class="org">Locatieraad, Bezoekersraad &amp; Centrale Raad</p>
             </div>
+            <span class="date">2025 &ndash; Present</span>
+          </div>
+          <ul>
+            <li>
+              Represent resident and visitor perspectives across local and central advisory councils.
+            </li>
+            <li>
+              Support structured stakeholder communication and follow-through across council
+              discussions.
+            </li>
+          </ul>
+        </div>
+      </article>
 
-            <article class="card intro-card visible">
-                <h3>Executive Summary</h3>
-                <p class="lead">
-                    Versatile creative and hospitality professional with proven experience across high-volume guest experience, live event production, performing arts education, and civic advisory representation.
-                </p>
-                <p>
-                    Known for rapid operational mastery, calm problem-solving, and proactive leadership. Currently expanding technical capabilities in <strong>C programming</strong> (Codam Coding College) and <strong>WordPress web management</strong>.
-                </p>
-            </article>
-
-            <article class="card visible">
-                <h3>Work Experience</h3>
-
-                <div class="entry">
-                    <div class="entry-top">
-                        <div>
-                            <h4>Experience Champion &amp; Entertainment Host</h4>
-                            <p class="org">Madame Tussauds Amsterdam (Dam 20)</p>
-                        </div>
-                        <span class="date">2025 &ndash; Present</span>
-                    </div>
-                    <ul>
-                        <li>Completed probation ahead of schedule, demonstrating rapid mastery across multiple attraction departments.</li>
-                        <li>Ranked among top performers as <strong>Experience Champion</strong>, driving guest satisfaction survey completion and quality scores.</li>
-                        <li>Deliver engaging, high-energy guest interactions across attraction zones while managing crowd flow and maintaining strict service and safety standards.</li>
-                        <li>Support cross-departmental floor operations and resolve guest inquiries calmly in a fast-paced international environment.</li>
-                    </ul>
-                </div>
-
-                <div class="entry">
-                    <div class="entry-top">
-                        <div>
-                            <h4>Director &amp; Entertainment Producer</h4>
-                            <p class="org">Kraats &amp; Matthew Entertainment (Kmentindustry)</p>
-                        </div>
-                        <span class="date">2022 &ndash; Present</span>
-                    </div>
-                    <ul>
-                        <li>Founded and direct an independent entertainment company managing artists, live productions, event logistics, and community programmes.</li>
-                        <li>Launched and lead <strong>GroovePark</strong>, a free weekly community movement, dance, and wellness programme in Amsterdam.</li>
-                        <li>Manage artist bookings, contracts, brand partnerships, and entourage activations built around fair pay and community-first programming.</li>
-                    </ul>
-                </div>
-            </article>
-
-            <article class="card visible">
-                <h3>Civic &amp; Advisory Representation</h3>
-                <div class="entry">
-                    <div class="entry-top">
-                        <div>
-                            <h4>Council Representative</h4>
-                            <p class="org">Locatieraad, Bezoekersraad &amp; Centrale Raad</p>
-                        </div>
-                        <span class="date">2025 &ndash; Present</span>
-                    </div>
-                    <ul>
-                        <li>Represent community and visitor interests across local and central advisory councils, translating on-the-ground feedback into structured policy input.</li>
-                        <li>Coordinate stakeholder communication and follow-through across council meetings with clear governance and administrative workflows.</li>
-                    </ul>
-                </div>
-            </article>
-
-            <article class="card visible">
-                <h3>Core Skills &amp; Languages</h3>
-                <div class="skills-grid">
-                    <div class="skill-group">
-                        <h4>Operations &amp; Leadership</h4>
-                        <div class="tags">
-                            <span>Guest Experience &amp; Hospitality</span>
-                            <span>Crowd Flow &amp; Floor Operations</span>
-                            <span>Project &amp; Event Management</span>
-                            <span>Stakeholder Advocacy</span>
-                            <span>Dance &amp; Choreography</span>
-                            <span>Education &amp; Facilitation</span>
-                        </div>
-                    </div>
-                    <div class="skill-group">
-                        <h4>Technical &amp; Languages</h4>
-                        <div class="tags">
-                            <span>C Programming (Codam &mdash; In Progress)</span>
-                            <span>WordPress (In Progress)</span>
-                            <span>English (Fluent)</span>
-                            <span>Dutch (Intermediate)</span>
-                            <span>Spanish (Intermediate)</span>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        </section>
-
-        <!-- SECTION 3: ARTIST CREDENTIALS -->
-        <section id="artist" class="profile-section" data-category="artist">
-            <div class="section-header">
-                <span class="section-tag">Stage, Movement &amp; Sound</span>
-                <h2>Artist Credentials</h2>
+      <article class="card">
+        <h3>Core Skills &amp; Languages</h3>
+        <div class="skills-grid">
+          <div class="skill-group">
+            <h4>Operations &amp; Leadership</h4>
+            <div class="tags">
+              <span>Guest Experience &amp; Hospitality</span>
+              <span>Crowd Flow &amp; Floor Operations</span>
+              <span>Event &amp; Project Coordination</span>
+              <span>Stakeholder Advocacy</span>
+              <span>Movement Facilitation</span>
             </div>
-
-            <article class="card intro-card visible">
-                <h3>Artistic Identity</h3>
-                <p class="lead">
-                    Performer, dancer, and musician rooted in the arts scenes of the Netherlands and Sint Maarten[cite: 1].
-                </p>
-                <p>
-                    Building on formal contemporary dance training, Fernando bridges physical theatre, African-diaspora rhythms, percussion, vocals, and live band performance across both independent theatre spaces and contemporary pop/soul stages[cite: 1].
-                </p>
-            </article>
-
-            <article class="card visible">
-                <h3>Stage, Theatre &amp; Touring Credits</h3>
-
-                <div class="entry">
-                    <div class="entry-top">
-                        <div>
-                            <h4><em>UMA</em> &mdash; Theatrical Dance &amp; Percussion Production</h4>
-                            <p class="org">Untold &amp; Black Harmony &bull; Black Heritage Festival (Bijlmer Parktheater, Amsterdam)[cite: 1]</p>
-                        </div>
-                        <span class="date">Stage Production</span>
-                    </div>
-                    <p>
-                        Contributed movement and musicality to <em>UMA</em>, a collaborative theatrical work exploring historical narratives and cultural heritage through dance, percussion, and ensemble synchronization[cite: 1].
-                    </p>
-                </div>
-
-                <div class="entry">
-                    <div class="entry-top">
-                        <div>
-                            <h4>Touring Musician &amp; Live Band Member</h4>
-                            <p class="org">Jason Gwen &mdash; Live Album &amp; Seasonal Tours (Netherlands)[cite: 1]</p>
-                        </div>
-                        <span class="date">Live Music</span>
-                    </div>
-                    <p>
-                        Performs as a touring band member and live musician alongside singer-songwriter Jason Gwen, bringing rhythmic accompaniment and stage presence to contemporary pop and soul lineups[cite: 1].
-                    </p>
-                </div>
-
-                <div class="entry">
-                    <div class="entry-top">
-                        <div>
-                            <h4>Institutional Showcases, Galas &amp; Interdisciplinary Collaborations</h4>
-                            <p class="org">Amsterdam &amp; Sint Maarten[cite: 1]</p>
-                        </div>
-                        <span class="date">Selected Credits</span>
-                    </div>
-                    <ul>
-                        <li>Performed in cultural dance showcases connected to Dutch institutional programmes and independent Amsterdam contemporary dance collectives[cite: 1].</li>
-                        <li>Featured performer at the <strong>USC Christmas Gala</strong> in Sint Maarten and appeared in artistic editorial features including <em>Star Magazine</em> (Maxivive).</li>
-                        <li>Early pre-professional showcase performances with the <strong>5 O&rsquo;Clock Class</strong> at the Amsterdam University of the Arts (AHK)[cite: 1].</li>
-                    </ul>
-                </div>
-            </article>
-
-            <article class="card visible">
-                <h3>Arts Education &amp; Movement Training</h3>
-
-                <div class="entry">
-                    <div class="entry-top">
-                        <div>
-                            <h4>HBO Bachelor in Dance Education</h4>
-                            <p class="org">Amsterdam University of the Arts (Amsterdamse Hogeschool voor de Kunsten / AHK)[cite: 1]</p>
-                        </div>
-                        <span class="date">2016 &ndash; 2019</span>
-                    </div>
-                    <p>Academy of Theatre and Dance training bridging dance pedagogy, choreography, physical theatre, and musicality[cite: 1].</p>
-                </div>
-
-                <div class="entry">
-                    <div class="entry-top">
-                        <div>
-                            <h4>Performing Arts &amp; Teaching Internship</h4>
-                            <p class="org">National Institute of Arts (NIA) &mdash; Sint Maarten</p>
-                        </div>
-                        <span class="date">2013 &ndash; 2015</span>
-                    </div>
-                    <p>
-                        Completed multidisciplinary performing arts training, participated in the <em>Art Saves Lives Summer Intensive</em>, and served as a Teaching Intern in Drama, Dance, and Music across multiple schools.
-                    </p>
-                </div>
-
-                <div class="skill-group disciplines-group">
-                    <h4>Movement &amp; Performance Disciplines</h4>
-                    <div class="tags">
-                        <span>Contemporary</span>
-                        <span>Modern (Horton &amp; Martha Graham)</span>
-                        <span>African Dance &amp; Percussion</span>
-                        <span>Ballet</span>
-                        <span>Jazz</span>
-                        <span>Hip Hop</span>
-                        <span>Latin</span>
-                        <span>Physical Theatre &amp; Live Instrumentation</span>
-                    </div>
-                </div>
-            </article>
-        </section>
-
-        <!-- CONTACT & CV ACCESS -->
-        <section id="contact" class="card contact-card visible">
-            <h3>Get in Touch</h3>
-            <p>Available for hospitality &amp; guest experience roles, event production, council/community initiatives, and artistic bookings.</p>
-            <div class="contact-grid">
-                <div>
-                    <span class="label">Email</span>
-                    <a href="mailto:vdkfelix@gmail.com">vdkfelix@gmail.com</a>
-                </div>
-                <div>
-                    <span class="label">Phone / WhatsApp</span>
-                    <a href="tel:+31643873878">+31 6 4387 3878</a>
-                </div>
-                <div>
-                    <span class="label">Socials &amp; Links</span>
-                    <a href="https://linktr.ee/iamnandov" target="_blank" rel="noopener noreferrer">linktr.ee/iamnandov</a>[cite: 1]
-                </div>
+          </div>
+          <div class="skill-group">
+            <h4>Technical &amp; Languages</h4>
+            <div class="tags">
+              <span>C Programming (Codam &mdash; In Progress)</span>
+              <span>WordPress (In Progress)</span>
+              <span>English (Fluent)</span>
+              <span>Dutch (Intermediate)</span>
+              <span>Spanish (Intermediate)</span>
             </div>
-            <div class="cta-group contact-cta">
-                <a href="https://www.canva.com/d/ZB6OXIXt_QIxFcS" target="_blank" rel="noopener noreferrer" class="btn-gold">View / Download CV on Canva</a>
-                <a href="https://linktr.ee/iamnandov" target="_blank" rel="noopener noreferrer" class="btn-outline">More Links</a>[cite: 1]
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 3. ARTIST CREDENTIALS -->
+    <section id="artist" class="profile-section" data-category="artist">
+      <div class="section-header">
+        <span class="section-tag">Stage, Movement &amp; Sound</span>
+        <h2>Artist Credentials</h2>
+      </div>
+
+      <article class="card intro-card">
+        <h3>Artistic Identity</h3>
+        <p class="lead">
+          Performer, dancer, and musician bridging the Netherlands and Sint Maarten through
+          contemporary movement, physical theatre, rhythm/percussion, and live performance.
+        </p>
+      </article>
+
+      <article class="card">
+        <h3>Stage, Theatre &amp; Touring Credits</h3>
+
+        <div class="entry">
+          <div class="entry-top">
+            <div>
+              <h4><em>UMA</em> &mdash; Theatrical Dance &amp; Percussion Production</h4>
+              <p class="org">Untold &amp; Black Harmony &bull; Black Heritage Festival (Amsterdam)</p>
             </div>
-        </section>
+            <span class="date">Stage Production</span>
+          </div>
+          <p>
+            Performed in <em>UMA</em>, a collaborative stage production uniting dance, rhythm, and
+            historical storytelling presented at the Black Heritage Festival.
+          </p>
+        </div>
 
-    </main>
+        <div class="entry">
+          <div class="entry-top">
+            <div>
+              <h4>Touring Musician &amp; Live Band Member</h4>
+              <p class="org">Jason Gwen &mdash; Live Shows &amp; <em>SEX</em> Album Cycle</p>
+            </div>
+            <span class="date">Live Music</span>
+          </div>
+          <p>
+            Performed as a band member and live musician alongside singer-songwriter Jason Gwen.
+          </p>
+        </div>
 
-    <footer>
-        <p>&copy; 2026 Fernando F. van der Kraats &bull; Kmentindustry</p>
-    </footer>
+        <div class="entry">
+          <div class="entry-top">
+            <div>
+              <h4>Showcases &amp; Galas</h4>
+              <p class="org">Sint Maarten &amp; Amsterdam</p>
+            </div>
+            <span class="date">Selected Credits</span>
+          </div>
+          <ul>
+            <li>Featured dance performance at the USC Christmas Gala in Sint Maarten (2017).</li>
+            <li>
+              Showcases connected to the 5 O&rsquo;Clock Program at Amsterdam University of the Arts
+              (AHK) and National Institute of Arts (NIA) training.
+            </li>
+          </ul>
+        </div>
+      </article>
 
-    <script>
-        const validFilters = ['online', 'professional', 'artist'];
-        const tabButtons = document.querySelectorAll('.tab-btn');
-        const sections = document.querySelectorAll('.profile-section');
+      <article class="card">
+        <h3>Arts Education &amp; Movement Training</h3>
 
-        function setFilter(filter, shouldScroll = false) {
-            tabButtons.forEach(btn => {
-                btn.classList.toggle('active', btn.dataset.target === filter);
-            });
+        <div class="entry">
+          <div class="entry-top">
+            <div>
+              <h4>HBO Bachelor in Dance Education</h4>
+              <p class="org">Amsterdam University of the Arts (AHK)</p>
+            </div>
+            <span class="date">2016 &ndash; 2019</span>
+          </div>
+          <p>
+            Trained in dance education, choreography, and stage performance at the Academy of
+            Theatre and Dance.
+          </p>
+        </div>
 
-            sections.forEach(sec => {
-                sec.style.display = (filter === 'all' || sec.dataset.category === filter) ? 'block' : 'none';
-            });
+        <div class="entry">
+          <div class="entry-top">
+            <div>
+              <h4>Performing Arts Training &amp; Teaching Experience</h4>
+              <p class="org">National Institute of Arts (NIA) &mdash; Sint Maarten</p>
+            </div>
+            <span class="date">2013 &ndash; 2015</span>
+          </div>
+          <p>
+            Multidisciplinary training across dance, drama, and music, including school teaching
+            experience and the Art Saves Lives Summer Intensive (2015).
+          </p>
+        </div>
 
-            if (shouldScroll && validFilters.includes(filter)) {
-                const targetEl = document.getElementById(filter);
-                if (targetEl) {
-                    targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            }
+        <div class="skill-group disciplines-group">
+          <h4>Movement &amp; Performance Disciplines</h4>
+          <div class="tags">
+            <span>Contemporary</span>
+            <span>Modern (Horton &amp; Graham)</span>
+            <span>African Dance &amp; Percussion</span>
+            <span>Ballet</span>
+            <span>Jazz</span>
+            <span>Hip Hop</span>
+            <span>Latin</span>
+            <span>Physical Theatre &amp; Live Music</span>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- CONTACT & CV ACCESS -->
+    <section id="contact" class="card contact-card">
+      <h3>Get in Touch</h3>
+      <p>
+        Open to guest experience/hospitality roles, event production &amp; partnerships, and
+        stage/music bookings.
+      </p>
+      <div class="contact-grid">
+        <div>
+          <span class="label">Email</span>
+          <a href="mailto:vdkfelix@gmail.com">vdkfelix@gmail.com</a>
+        </div>
+        <div>
+          <span class="label">Phone / WhatsApp</span>
+          <a href="tel:+31643873878">+31 6 4387 3878</a>
+        </div>
+        <div>
+          <span class="label">Links</span>
+          <a href="https://linktr.ee/iamnandov" target="_blank" rel="noopener noreferrer"
+            >linktr.ee/iamnandov</a
+          >
+        </div>
+      </div>
+      <div class="cta-group contact-cta">
+        <a
+          href="https://www.canva.com/d/ZB60XIXt_QIxFcS"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-gold"
+          >View / Download CV</a
+        >
+        <a
+          href="https://linktr.ee/iamnandov"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-outline"
+          >All Links</a
+        >
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Fernando F. van der Kraats &bull; Kmentindustry</p>
+  </footer>
+
+  <script>
+    const validFilters = ['online', 'professional', 'artist'];
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const sections = document.querySelectorAll('.profile-section');
+
+    function setFilter(filter, shouldScroll = false) {
+      tabButtons.forEach((btn) => {
+        btn.classList.toggle('active', btn.dataset.target === filter);
+      });
+      sections.forEach((sec) => {
+        sec.style.display =
+          filter === 'all' || sec.dataset.category === filter ? 'block' : 'none';
+      });
+      if (shouldScroll && validFilters.includes(filter)) {
+        const targetEl = document.getElementById(filter);
+        if (targetEl) {
+          targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
+      }
+    }
 
-        tabButtons.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const target = btn.dataset.target;
-                setFilter(target, false);
-                if (validFilters.includes(target)) {
-                    history.replaceState(null, '', '#' + target);
-                } else {
-                    history.replaceState(null, '', window.location.pathname + window.location.search);
-                }
-            });
-        });
-
-        document.querySelectorAll('.hero .btn-outline[href^="#"]').forEach(link => {
-            link.addEventListener('click', (e) => {
-                const target = link.getAttribute('href').replace('#', '');
-                if (validFilters.includes(target)) {
-                    e.preventDefault();
-                    setFilter(target, true);
-                    history.replaceState(null, '', '#' + target);
-                }
-            });
-        });
-
-        window.addEventListener('DOMContentLoaded', () => {
-            const hash = window.location.hash.replace('#', '');
-            if (validFilters.includes(hash)) {
-                setFilter(hash, false);
-            }
-        });
-
-        const canvas = document.getElementById('header-canvas');
-        const ctx = canvas ? canvas.getContext('2d') : null;
-
-        if (canvas && ctx) {
-            let particles = [];
-
-            function initParticles() {
-                particles = [];
-                for (let i = 0; i < 38; i++) {
-                    particles.push({
-                        x: Math.random() * canvas.width,
-                        y: Math.random() * canvas.height,
-                        r: Math.random() * 1.8 + 0.5,
-                        dx: (Math.random() - 0.5) * 0.3,
-                        dy: (Math.random() - 0.5) * 0.3,
-                        alpha: Math.random() * 0.5 + 0.15
-                    });
-                }
-            }
-
-            function resizeCanvas() {
-                canvas.width = canvas.offsetWidth;
-                canvas.height = canvas.offsetHeight;
-                initParticles();
-            }
-
-            window.addEventListener('resize', resizeCanvas);
-            resizeCanvas();
-
-            function animateParticles() {
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-                particles.forEach(p => {
-                    p.x += p.dx;
-                    p.y += p.dy;
-                    if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
-                    if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
-                    ctx.beginPath();
-                    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-                    ctx.fillStyle = `rgba(212, 175, 55, ${p.alpha})`;
-                    ctx.fill();
-                });
-                requestAnimationFrame(animateParticles);
-            }
-
-            animateParticles();
+    tabButtons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const target = btn.dataset.target;
+        setFilter(target, false);
+        if (validFilters.includes(target)) {
+          history.replaceState(null, '', '#' + target);
+        } else {
+          history.replaceState(null, '', window.location.pathname + window.location.search);
         }
-    </script>
+      });
+    });
+
+    document.querySelectorAll('.hero .btn-outline[href^="#"]').forEach((link) => {
+      link.addEventListener('click', (e) => {
+        const target = link.getAttribute('href').replace('#', '');
+        if (validFilters.includes(target)) {
+          e.preventDefault();
+          setFilter(target, true);
+          history.replaceState(null, '', '#' + target);
+        }
+      });
+    });
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const hash = window.location.hash.replace('#', '');
+      if (validFilters.includes(hash)) {
+        setFilter(hash, false);
+      }
+    });
+
+    const canvas = document.getElementById('header-canvas');
+    const ctx = canvas ? canvas.getContext('2d') : null;
+    if (canvas && ctx) {
+      let particles = [];
+      function initParticles() {
+        particles = [];
+        for (let i = 0; i < 38; i++) {
+          particles.push({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            r: Math.random() * 1.8 + 0.5,
+            dx: (Math.random() - 0.5) * 0.3,
+            dy: (Math.random() - 0.5) * 0.3,
+            alpha: Math.random() * 0.5 + 0.15,
+          });
+        }
+      }
+      function resizeCanvas() {
+        canvas.width = canvas.offsetWidth;
+        canvas.height = canvas.offsetHeight;
+        initParticles();
+      }
+      window.addEventListener('resize', resizeCanvas);
+      resizeCanvas();
+
+      function animateParticles() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        particles.forEach((p) => {
+          p.x += p.dx;
+          p.y += p.dy;
+          if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+          if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(212, 175, 55, ${p.alpha})`;
+          ctx.fill();
+        });
+        requestAnimationFrame(animateParticles);
+      }
+      animateParticles();
+    }
+  </script>
 </body>
 </html>
