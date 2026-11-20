@@ -29,6 +29,12 @@ body {
     line-height: 1.75;
 }
 
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--gold-primary);
+    outline-offset: 2px;
+}
+
 /* Hero Section */
 .hero {
     position: relative;
@@ -94,7 +100,7 @@ h2.subtitle {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 1rem;
+    gap: 0.85rem;
 }
 
 .btn-gold {
@@ -161,7 +167,8 @@ h2.subtitle {
     gap: 0.65rem;
 }
 
-.tab-btn, .nav-link {
+.tab-btn,
+.nav-link {
     background: transparent;
     border: 1px solid rgba(212, 175, 55, 0.25);
     color: var(--text-primary);
@@ -176,7 +183,8 @@ h2.subtitle {
     transition: all 0.25s ease;
 }
 
-.tab-btn:hover, .nav-link:hover {
+.tab-btn:hover,
+.nav-link:hover {
     border-color: var(--gold-primary);
     color: var(--gold-light);
 }
@@ -197,6 +205,7 @@ h2.subtitle {
 
 .profile-section {
     margin-bottom: 3.5rem;
+    scroll-margin-top: 4.5rem;
 }
 
 .section-header {
@@ -315,11 +324,21 @@ em { color: var(--gold-primary); }
     margin-bottom: 0.45rem;
 }
 
+.entry li:last-child {
+    margin-bottom: 0;
+}
+
 /* Skill & Discipline Tags */
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 1.5rem;
+}
+
+.disciplines-group {
+    margin-top: 1.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
 }
 
 .skill-group h4 {
@@ -373,6 +392,11 @@ em { color: var(--gold-primary); }
     text-decoration: underline;
 }
 
+.contact-cta {
+    margin-top: 1.8rem;
+    justify-content: flex-start;
+}
+
 /* Footer */
 footer {
     text-align: center;
@@ -387,4 +411,5 @@ footer {
     h2.subtitle { font-size: 0.92rem; letter-spacing: 1.5px; }
     .entry-top { flex-direction: column; gap: 0.35rem; }
     .card { padding: 1.5rem; }
+    .contact-cta { justify-content: center; }
 }
