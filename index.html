@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fernando F. van der Kraats | Professional CV &amp; Artist Portfolio</title>
-    <meta name="description" content="Fernando F. van der Kraats — Guest Experience, Event Production, Performing Arts &amp; Music in Amsterdam &amp; Sint Maarten.">
+    <title>Fernando F. van der Kraats | Online Presence, CV &amp; Artist Portfolio</title>
+    <meta name="description" content="Fernando F. van der Kraats — Online footprint, CV, guest experience, event production, performing arts &amp; music in Amsterdam &amp; Sint Maarten.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -67,7 +67,7 @@
         .header-content {
             position: relative;
             z-index: 2;
-            max-width: 860px;
+            max-width: 880px;
             margin: 0 auto;
         }
 
@@ -276,6 +276,31 @@
             color: #ffffff;
         }
 
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.25rem;
+            margin-top: 1.25rem;
+        }
+
+        .highlight-box {
+            background: var(--bg-elevated);
+            border: 1px solid rgba(212, 175, 55, 0.22);
+            border-radius: 6px;
+            padding: 1.25rem;
+        }
+
+        .highlight-box h4 {
+            font-size: 0.98rem;
+            color: var(--gold-light);
+            margin-bottom: 0.45rem;
+        }
+
+        .highlight-box p {
+            font-size: 0.9rem;
+            color: var(--text-primary);
+        }
+
         .entry {
             padding-bottom: 1.5rem;
             margin-bottom: 1.5rem;
@@ -428,6 +453,7 @@
 
             <div class="cta-group">
                 <a href="https://www.canva.com/d/ZB6OXIXt_QIxFcS" target="_blank" rel="noopener noreferrer" class="btn-gold">View / Download CV</a>
+                <a href="#online" class="btn-outline">Online Footprint</a>
                 <a href="#professional" class="btn-outline">Professional CV</a>
                 <a href="#artist" class="btn-outline">Artist Credentials</a>
                 <a href="https://linktr.ee/iamnandov" target="_blank" rel="noopener noreferrer" class="btn-outline">Connect</a>
@@ -437,7 +463,8 @@
 
     <nav class="profile-nav" aria-label="Profile Sections">
         <div class="nav-inner">
-            <button type="button" class="tab-btn active" data-target="all">All Credentials</button>
+            <button type="button" class="tab-btn active" data-target="all">All Sections</button>
+            <button type="button" class="tab-btn" data-target="online">Online Presence</button>
             <button type="button" class="tab-btn" data-target="professional">Professional CV</button>
             <button type="button" class="tab-btn" data-target="artist">Artist Credentials</button>
             <a href="#contact" class="nav-link">Contact</a>
@@ -446,11 +473,44 @@
 
     <main class="container">
 
-        <!-- SECTION 1: PROFESSIONAL / CAREER CV -->
+        <!-- SECTION 1: ONLINE FOOTPRINT & PUBLIC PROFESSIONAL OVERVIEW (FIRST IMPRESSION) -->
+        <section id="online" class="profile-section" data-category="online">
+            <div class="section-header">
+                <span class="section-tag">Public Profile &amp; Highlights</span>
+                <h2>What You&rsquo;ll Find Online Professionally</h2>
+            </div>
+
+            <article class="card intro-card visible">
+                <h3>Public Professional Snapshot</h3>
+                <p class="lead">
+                    Across hospitality, community programming, event production, and performing arts, Fernando F. van der Kraats is known for high-energy guest engagement, structured coordination, and bridging creative culture with practical execution.
+                </p>
+                <p>
+                    Below is a curated overview of his public professional footprint before moving into his formal <strong>CV</strong> and dedicated <strong>Artist Credentials</strong>.
+                </p>
+
+                <div class="highlights-grid">
+                    <div class="highlight-box">
+                        <h4>High-Volume Guest Experience</h4>
+                        <p>Recognized as an <strong>Experience Champion</strong> at Madame Tussauds Amsterdam, driving guest satisfaction, crowd flow, and cross-department floor support.</p>
+                    </div>
+                    <div class="highlight-box">
+                        <h4>Kmentindustry &amp; GroovePark</h4>
+                        <p>Founder and director behind <strong>Kmentindustry</strong> and <strong>GroovePark</strong>, bringing together live event promotion, artist/entourage coordination, and free community movement.</p>
+                    </div>
+                    <div class="highlight-box">
+                        <h4>Stage, Music &amp; Cultural Roots</h4>
+                        <p>Associated with Amsterdam and Sint Maarten arts circles—from AHK dance training and <em>UMA</em> (Untold &amp; Black Harmony) to live touring with singer-songwriter Jason Gwen[cite: 1].</p>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <!-- SECTION 2: PROFESSIONAL / CAREER CV -->
         <section id="professional" class="profile-section" data-category="professional">
             <div class="section-header">
                 <span class="section-tag">Career &amp; Operations</span>
-                <h2>Professional Profile</h2>
+                <h2>Professional CV</h2>
             </div>
 
             <article class="card intro-card visible">
@@ -543,7 +603,7 @@
             </article>
         </section>
 
-        <!-- SECTION 2: ARTIST CREDENTIALS -->
+        <!-- SECTION 3: ARTIST CREDENTIALS -->
         <section id="artist" class="profile-section" data-category="artist">
             <div class="section-header">
                 <span class="section-tag">Stage, Movement &amp; Sound</span>
@@ -553,10 +613,10 @@
             <article class="card intro-card visible">
                 <h3>Artistic Identity</h3>
                 <p class="lead">
-                    Performer, dancer, and musician rooted in the arts scenes of the Netherlands and Sint Maarten.
+                    Performer, dancer, and musician rooted in the arts scenes of the Netherlands and Sint Maarten[cite: 1].
                 </p>
                 <p>
-                    Building on formal contemporary dance training, Fernando bridges physical theatre, African-diaspora rhythms, percussion, vocals, and live band performance across both independent theatre spaces and contemporary pop/soul stages.
+                    Building on formal contemporary dance training, Fernando bridges physical theatre, African-diaspora rhythms, percussion, vocals, and live band performance across both independent theatre spaces and contemporary pop/soul stages[cite: 1].
                 </p>
             </article>
 
@@ -567,12 +627,12 @@
                     <div class="entry-top">
                         <div>
                             <h4><em>UMA</em> &mdash; Theatrical Dance &amp; Percussion Production</h4>
-                            <p class="org">Untold &amp; Black Harmony &bull; Black Heritage Festival (Bijlmer Parktheater, Amsterdam)</p>
+                            <p class="org">Untold &amp; Black Harmony &bull; Black Heritage Festival (Bijlmer Parktheater, Amsterdam)[cite: 1]</p>
                         </div>
                         <span class="date">Stage Production</span>
                     </div>
                     <p>
-                        Contributed movement and musicality to <em>UMA</em>, a collaborative theatrical work exploring historical narratives and cultural heritage through dance, percussion, and ensemble synchronization.
+                        Contributed movement and musicality to <em>UMA</em>, a collaborative theatrical work exploring historical narratives and cultural heritage through dance, percussion, and ensemble synchronization[cite: 1].
                     </p>
                 </div>
 
@@ -580,12 +640,12 @@
                     <div class="entry-top">
                         <div>
                             <h4>Touring Musician &amp; Live Band Member</h4>
-                            <p class="org">Jason Gwen &mdash; Live Album &amp; Seasonal Tours (Netherlands)</p>
+                            <p class="org">Jason Gwen &mdash; Live Album &amp; Seasonal Tours (Netherlands)[cite: 1]</p>
                         </div>
                         <span class="date">Live Music</span>
                     </div>
                     <p>
-                        Performs as a touring band member and live musician alongside Dutch singer-songwriter Jason Gwen, bringing rhythmic accompaniment and stage presence to contemporary pop and soul lineups.
+                        Performs as a touring band member and live musician alongside singer-songwriter Jason Gwen, bringing rhythmic accompaniment and stage presence to contemporary pop and soul lineups[cite: 1].
                     </p>
                 </div>
 
@@ -593,14 +653,14 @@
                     <div class="entry-top">
                         <div>
                             <h4>Institutional Showcases, Galas &amp; Interdisciplinary Collaborations</h4>
-                            <p class="org">Amsterdam &amp; Sint Maarten</p>
+                            <p class="org">Amsterdam &amp; Sint Maarten[cite: 1]</p>
                         </div>
                         <span class="date">Selected Credits</span>
                     </div>
                     <ul>
-                        <li>Performed in cultural dance showcases connected to Dutch institutional programmes and independent Amsterdam contemporary dance collectives.</li>
+                        <li>Performed in cultural dance showcases connected to Dutch institutional programmes and independent Amsterdam contemporary dance collectives[cite: 1].</li>
                         <li>Featured performer at the <strong>USC Christmas Gala</strong> in Sint Maarten and appeared in artistic editorial features including <em>Star Magazine</em> (Maxivive).</li>
-                        <li>Early pre-professional showcase performances with the <strong>5 O&rsquo;Clock Class</strong> at the Amsterdam University of the Arts (AHK).</li>
+                        <li>Early pre-professional showcase performances with the <strong>5 O&rsquo;Clock Class</strong> at the Amsterdam University of the Arts (AHK)[cite: 1].</li>
                     </ul>
                 </div>
             </article>
@@ -612,11 +672,11 @@
                     <div class="entry-top">
                         <div>
                             <h4>HBO Bachelor in Dance Education</h4>
-                            <p class="org">Amsterdam University of the Arts (Amsterdamse Hogeschool voor de Kunsten / AHK)</p>
+                            <p class="org">Amsterdam University of the Arts (Amsterdamse Hogeschool voor de Kunsten / AHK)[cite: 1]</p>
                         </div>
                         <span class="date">2016 &ndash; 2019</span>
                     </div>
-                    <p>Academy of Theatre and Dance training bridging dance pedagogy, choreography, physical theatre, and musicality.</p>
+                    <p>Academy of Theatre and Dance training bridging dance pedagogy, choreography, physical theatre, and musicality[cite: 1].</p>
                 </div>
 
                 <div class="entry">
@@ -663,12 +723,12 @@
                 </div>
                 <div>
                     <span class="label">Socials &amp; Links</span>
-                    <a href="https://linktr.ee/iamnandov" target="_blank" rel="noopener noreferrer">linktr.ee/iamnandov</a>
+                    <a href="https://linktr.ee/iamnandov" target="_blank" rel="noopener noreferrer">linktr.ee/iamnandov</a>[cite: 1]
                 </div>
             </div>
             <div class="cta-group contact-cta">
                 <a href="https://www.canva.com/d/ZB6OXIXt_QIxFcS" target="_blank" rel="noopener noreferrer" class="btn-gold">View / Download CV on Canva</a>
-                <a href="https://linktr.ee/iamnandov" target="_blank" rel="noopener noreferrer" class="btn-outline">More Links</a>
+                <a href="https://linktr.ee/iamnandov" target="_blank" rel="noopener noreferrer" class="btn-outline">More Links</a>[cite: 1]
             </div>
         </section>
 
@@ -679,6 +739,7 @@
     </footer>
 
     <script>
+        const validFilters = ['online', 'professional', 'artist'];
         const tabButtons = document.querySelectorAll('.tab-btn');
         const sections = document.querySelectorAll('.profile-section');
 
@@ -691,7 +752,7 @@
                 sec.style.display = (filter === 'all' || sec.dataset.category === filter) ? 'block' : 'none';
             });
 
-            if (shouldScroll && filter !== 'all') {
+            if (shouldScroll && validFilters.includes(filter)) {
                 const targetEl = document.getElementById(filter);
                 if (targetEl) {
                     targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -703,7 +764,7 @@
             btn.addEventListener('click', () => {
                 const target = btn.dataset.target;
                 setFilter(target, false);
-                if (target !== 'all') {
+                if (validFilters.includes(target)) {
                     history.replaceState(null, '', '#' + target);
                 } else {
                     history.replaceState(null, '', window.location.pathname + window.location.search);
@@ -714,7 +775,7 @@
         document.querySelectorAll('.hero .btn-outline[href^="#"]').forEach(link => {
             link.addEventListener('click', (e) => {
                 const target = link.getAttribute('href').replace('#', '');
-                if (target === 'professional' || target === 'artist') {
+                if (validFilters.includes(target)) {
                     e.preventDefault();
                     setFilter(target, true);
                     history.replaceState(null, '', '#' + target);
@@ -724,7 +785,7 @@
 
         window.addEventListener('DOMContentLoaded', () => {
             const hash = window.location.hash.replace('#', '');
-            if (hash === 'professional' || hash === 'artist') {
+            if (validFilters.includes(hash)) {
                 setFilter(hash, false);
             }
         });
